@@ -3,7 +3,7 @@ library(seqinr)
 # Read a fasta file
 seqs <- read.fasta(file="41PromA.fasta", seqtype="DNA", strip.desc=TRUE)
 
-# dinucleotide relative abundance
+# nucleotide relative abundance
 myfun_rho <- function(x,k) seqinr::rho(c(x, ' ', rev(seqinr::comp(x))), wordsize=k)
 myrho <- sapply(X=seqs, FUN=myfun_rho, 3)
 
