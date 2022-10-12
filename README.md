@@ -1,2 +1,3 @@
-# Tokuda_et_al._PromA_plasmid
-
+# Host variations of distinct PromA plasmids with different nucleotide compositions
+## heatmap
+・このスクリプトはプラスミド間での3-mer compositionsを比較するために使用されました．
