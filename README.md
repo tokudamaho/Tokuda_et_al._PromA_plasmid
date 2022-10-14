@@ -9,7 +9,7 @@ Nucleotide sequence data of PromA plasmids used for creating heatmap.
 This script for calculating 3-mer compositions of double strand sequences  based on Euclidean distance.
 
 
-## assemble_draft_genome
+## heatmap/assemble_draft_genome
 assemble_draft_genome codeused for analysis in Maho Tokuda, Masahiro Yuki, Moriya Ohkuma, Kazuhide Kimbara, Haruo Suzuki and Masaki Shintani. (2022) 
 "Host variations of distinct PromA plasmids with different nucleotide compositions" 
 ### assemble_draft_genome/pbs.bactopia.sh
