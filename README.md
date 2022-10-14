@@ -13,9 +13,9 @@ This script for calculating 3-mer compositions of double strand sequences  based
 assemble_draft_genome codeused for analysis in Maho Tokuda, Masahiro Yuki, Moriya Ohkuma, Kazuhide Kimbara, Haruo Suzuki and Masaki Shintani. (2022) 
 "Host variations of distinct PromA plasmids with different nucleotide compositions" 
 ### assemble_draft_genome/pbs.bactopia.sh
-A code for assembling draft genomes of transconjugants (sequenced by Hiseq platform) by using Unicycler of Bactopia.
+A code for assembling draft genomes of transconjugants (sequenced by Hiseq platform) by using Unicycler of [Bactopia](https://github.com/bactopia/bactopia).
 ### assemble_draft_genome/run_extract_chr_seq_multi.sh
-Code for removing transferred PromA plasmid sequences.
+Code for removing transferred PromA plasmid sequences by BLAST.
 
 
 ## calculate_Mahalanobis_distance
