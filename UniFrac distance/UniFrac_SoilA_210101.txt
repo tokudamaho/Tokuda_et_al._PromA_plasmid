@@ -1,0 +1,32 @@
+
+  setwd("C:/Users/tokuda maho/Downloads")
+  library(ggplot2)
+  abund_table<-read.csv("otu_table.csv",row.names=1,check.names=FALSE)
+  abund_table<-t(abund_table)
+  meta_table<-read.csv("metadata_SA.csv",row.names=1,check.names=FALSE)
+  grouping_info<-data.frame(row.names=rownames(meta_table),t(as.data.frame(strsplit(rownames(meta_table),"_"))))
+  colnames(grouping_info)<-c("plasmid","source","sample")
+  meta_table<-data.frame(meta_table,grouping_info)
+  abund_table<-abund_table[rownames(abund_table) %in% rownames(meta_table),]
+  library(ape)
+   
+  OTU_tree <- read.tree("tree.txt")
+  library(phyloseq)
+  class(abund_table) <- "numeric"
+  OTU = otu_table(as.matrix(abund_table), taxa_are_rows = FALSE)
+  SAM = sample_data(meta_table)
+  OTU_taxonomy<-read.csv("taxonomy.csv",row.names=1,check.names=FALSE)
+  TAX = tax_table(as.matrix(OTU_taxonomy))
+  physeq<-merge_phyloseq(phyloseq(OTU, TAX),SAM,OTU_tree)
+  library(GUniFrac)
+  library(phangorn)  
+  physeq_subset<-prune_taxa(names(sort(taxa_sums(physeq), TRUE)[1:500]), physeq)
+  unifracs <- GUniFrac(as.matrix(otu_table(physeq_subset)), midpoint(phy_tree(physeq_subset)), alpha = c(0, 0.5, 1))$unifracs
+  dw <- unifracs[, , "d_1"]  
+  pcoa <- cmdscale(dw, k = nrow(as.matrix(otu_table(physeq_subset))) - 1, eig = TRUE, add = TRUE)
+  p<-plot_ordination(physeq_subset, pcoa, color="plasmid", label="plasmid", shape="sample", title="GUniFrac Weighted Unifrac_SoilA") + geom_point(size=5)+ theme_bw()
+  pdf("GUniFrac weighted Unifrac.pdf",width=8)
+  print(p)
+  dev.off()
+
+  
