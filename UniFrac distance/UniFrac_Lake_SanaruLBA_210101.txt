@@ -23,8 +23,8 @@
   unifracs <- GUniFrac(as.matrix(otu_table(physeq_subset)), midpoint(phy_tree(physeq_subset)), alpha = c(0, 0.5, 1))$unifracs
   dw <- unifracs[, , "d_1"]  
   pcoa <- cmdscale(dw, k = nrow(as.matrix(otu_table(physeq_subset))) - 1, eig = TRUE, add = TRUE)
-  p<-plot_ordination(physeq_subset, pcoa, color="plasmid", shape="sample", title="GUniFrac Weighted Unifrac_SanaruLBA") + geom_point(size=5)+ theme_bw()
-  pdf("GUniFrac weighted Unifrac.pdf",width=8)
+  p<-plot_ordination(physeq_subset, pcoa, color="plasmid", shape="sample", title="GUniFrac Weighted Unifrac_Lake_SanaruLBA") + geom_point(size=5)+ theme_bw()
+  pdf("GUniFrac weighted Unifrac_LL.pdf",width=8)
   print(p)
   dev.off()
 
