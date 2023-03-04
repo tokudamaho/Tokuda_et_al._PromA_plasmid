@@ -1,6 +1,4 @@
 
-
-  setwd("C:/Users/tokuda maho/Downloads")
   library(ggplot2)
   abund_table<-read.csv("otu_table.csv",row.names=1,check.names=FALSE)
   abund_table<-t(abund_table)
