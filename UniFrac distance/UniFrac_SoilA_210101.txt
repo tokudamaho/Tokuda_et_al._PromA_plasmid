@@ -25,7 +25,7 @@
   dw <- unifracs[, , "d_1"]  
   pcoa <- cmdscale(dw, k = nrow(as.matrix(otu_table(physeq_subset))) - 1, eig = TRUE, add = TRUE)
   p<-plot_ordination(physeq_subset, pcoa, color="plasmid", label="plasmid", shape="sample", title="GUniFrac Weighted Unifrac_SoilA") + geom_point(size=5)+ theme_bw()
-  pdf("GUniFrac weighted Unifrac.pdf",width=8)
+  pdf("GUniFrac weighted Unifrac_SoilA.pdf",width=8)
   print(p)
   dev.off()
 
