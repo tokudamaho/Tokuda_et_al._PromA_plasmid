@@ -3,6 +3,7 @@ library(ComplexHeatmap)
 
 seqs <- read.fasta(file="41PromA.fasta", seqtype="DNA", strip.desc=TRUE)
 
-myrho <- sapply(seqs, rho, wordsize = 3)
+myfun_rho <- function(x,k) seqinr::rho(c(x, ' ', rev(seqinr::comp(x))), wordsize=k)
+myrho <- sapply(X=seqs, FUN=myfun_rho, 3)
 
 Heatmap(myrho, clustering_distance_rows = "euclidean", column_split = 4, name="mer", row_dend_side = "right", column_dend_side = "bottom", row_names_gp = gpar(fontsize=2), column_names_gp = gpar(fontsize=5))
