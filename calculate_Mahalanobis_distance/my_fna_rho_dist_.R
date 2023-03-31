@@ -1,5 +1,5 @@
 # Usage: Rscript --vanilla scripts/my_fna_rho_dist_.R "${seq_pls}" "${seq_chr}" "${wordsize}" "${windowsize}"
-# Usage: Rscript --vanilla scripts/my_fna_rho_dist_.R "data/fna.Plasmid/AP018710.fna" "data/fna.Chromosome.KEP/NZ_CP014762.fna" 3 5000
+# Usage: Rscript --vanilla scripts/my_fna_rho_dist_.R "data/AP018710.fna" "data/NZ_CP014762.fna" 3 5000
 
 # Load packages
 library(seqinr)
