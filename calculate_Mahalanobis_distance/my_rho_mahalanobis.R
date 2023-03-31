@@ -1,5 +1,5 @@
 # Usage: Rscript --vanilla scripts/my_rho_mahalanobis.R "${seq1}" "${seqs}" "${wordsize}" "${windowsize}"
-# Usage: Rscript --vanilla scripts/my_rho_mahalanobis.R "data/AP018710.fna" "data/my.Chromosome.KEP.fna" 3 5000 >& log.$(date +%F).txt
+# Usage: Rscript --vanilla scripts/my_rho_mahalanobis.R "data/AP018710.fna" "data/my.Chromosome.KEP.fna" 3 5000 
 
 # clear the decks
 rm(list = ls())
