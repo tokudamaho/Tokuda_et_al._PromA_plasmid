@@ -20,11 +20,15 @@ Code for removing transferred PromA plasmid sequences by BLAST.
 
 ## calculate_Mahalanobis_distance
 calculate_Mahalanobis_distance code used for analysis in Maho Tokuda, Masahiro Yuki, Moriya Ohkuma, Kazuhide Kimbara, Haruo Suzuki and Masaki Shintani. (2022) 
-"Host variations of distinct PromA plasmids with different nucleotide compositions"
+"title"
+
 ### calculate_Mahalanobis_distance/my_fna_rho_dist_.R
 Code for calculation of Mahalanobis distance between plasmids and chromosomes (for draft genome sequences).
+The chromosomal sequences of 107 trasconjugants could be obtained from" dounload all" in figshare (dx.doi.org/10.6084/m9.figshare.20747521), and stored in "data" directory, and the script (my_fna_rho_dist_.R) is stored in "script" directory.
+
 ### calculate_Mahalanobis_distance/my_rho_mahalanobis.R
 Code for calculation of Mahalanobis distance between plasmids and chromosomes (for complete genome sequences).
+The chromosomal squence were obtained from Refseq, and stored in "data" directory, and the script (my_rho_mahalanobis.R) is stored in "script" directory.
 
 
 # Reference
